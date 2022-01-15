@@ -4,6 +4,7 @@ import cx from "classnames";
 
 interface MenuItemProps {
   title: string;
+  href: string;
   active?: boolean;
   icon:
     | "ic-card"
@@ -17,7 +18,7 @@ interface MenuItemProps {
 }
 
 export default function MenuItem(props: Partial<MenuItemProps>) {
-  const { title, icon, active } = props;
+  const { title, icon, active, href = "/" } = props;
   const classItem = cx({
     item: true,
     "mb-30": true,
@@ -29,7 +30,7 @@ export default function MenuItem(props: Partial<MenuItemProps>) {
       <div className="me-3">
         <Image src={`/icon/sidebar/${icon}.svg`} width={25} height={25} />
       </div>
-      <Link href="/">
+      <Link href={href}>
         <p className="item-title m-0">
           <a className="text-lg text-decoration-none">{title}</a>
         </p>
