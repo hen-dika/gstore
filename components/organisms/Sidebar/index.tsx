@@ -29,7 +29,7 @@ export default function Sidebar(props: MenuProps) {
           <MenuItem
             title="Transactions"
             icon="ic-transaction"
-            href="/member-transactions"
+            href="/member/transactions"
             active={activeMenu === "transactions"}
           />
           <MenuItem
